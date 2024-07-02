@@ -1,4 +1,10 @@
 """
+
+Name : HimakarRaju Gunda
+Date : 27-06-2024
+Trainer Name : Saynam
+
+Description of program :
 Write a program that takes a list of integers and returns a new list
 where each element is the square of the corresponding element in the original list.
 Use a list comprehension for this task

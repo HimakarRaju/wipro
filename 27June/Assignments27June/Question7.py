@@ -1,4 +1,10 @@
 """
+
+Name : HimakarRaju Gunda
+Date : 27-06-2024
+Trainer Name : Saynam
+
+Description of program :
 Write a program that takes a string as input from the user
 and counts the number of vowels (a, e, i, o, u) in the string.
 

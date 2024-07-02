@@ -1,4 +1,9 @@
 """
+Name : HimakarRaju Gunda
+Date : 02-07-2024
+Trainer Name : Saynam
+
+Description of program :
 Write a program that takes a string from the user and replaces all vowels with the character '*'.
 Example:Input: "hello world"
 Output: "h*ll* w*rld"

@@ -1,4 +1,10 @@
 """
+
+Name : HimakarRaju Gunda
+Date : 27-06-2024
+Trainer Name : Saynam
+
+Description of program :
 Write a program that reads a file called "input.txt" and
 prints its contents line by line.
 If the file does not exist, print a message saying the file could not be found.

@@ -1,8 +1,17 @@
-# Write a Python program that calculates the sum of all numbers divisible by 3 or 5 below a given number n. Prompt the user to enter a number n and then compute and print the sum of all such numbers.
-# eg :
-# Enter a number: 20
-# Sum of numbers divisible by 3 or 5 below 20 is 78.
+"""
 
+Name : HimakarRaju Gunda
+Date : 02-07-2024
+Trainer Name : Saynam
+
+Description of program :
+Write a Python program that calculates the sum of all numbers divisible by 3 or 5 below a given number n.
+Prompt the user to enter a number n and then compute and print the sum of all such numbers.
+
+eg :
+Enter a number: 20
+Sum of numbers divisible by 3 or 5 below 20 is 78.
+"""
 # Prompt the user to enter a number n
 number = int(input("Enter a number: "))
 

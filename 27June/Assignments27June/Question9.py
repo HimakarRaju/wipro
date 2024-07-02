@@ -1,5 +1,13 @@
 """
-Write a program that takes a list of dictionaries (each dictionary representing a student with "name" and "grades" keys) and prints the average grade of each student.
+
+Name : HimakarRaju Gunda
+Date : 02-07-2024
+Trainer Name : Saynam
+
+Description of program :
+Write a program that takes a list of dictionaries
+(each dictionary representing a student with "name" and "grades" keys)
+and prints the average grade of each student.
 """
 # Example list of dictionaries representing students
 students = [

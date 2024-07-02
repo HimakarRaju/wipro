@@ -1,4 +1,9 @@
 """
+Name : HimakarRaju Gunda
+Date : 27-06-2024
+Trainer Name : Saynam
+
+Description of program :
 Write a program that takes a list of tuples representing student names and their grades,
 and prints a set of students who scored more than 75.
 

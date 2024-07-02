@@ -9,7 +9,8 @@ def main():
     active = True
     while active:
         print(
-            "\n1. Create Account\n2. Check Balance\n3. Add Amount\n4. Withdraw Amount\n5. Check Account Details\n6.Exit")
+            "\n1. Create Account\n2. Check Balance\n3. Add Amount\n4. Withdraw Amount\n"
+            "5. Check Account Details\n6.Exit\n")
         choice = input("Enter Your Choice: ")
 
         if choice == "1":

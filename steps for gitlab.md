@@ -29,10 +29,13 @@ step7:
 #if green
 git commit -m "commit message"
 #for first time 
-git config --global user.email "email in the gitlab cred mail" > press enter
 
-git config --global user.name "gitlab username" > press enter
+``shell
+git config --global user.email "email in the gitlab cred mail" ``
+-> press enter
 
+``shell
+git config --global user.name "gitlab username" `` -> press enter
 
 step8:
 #pusing the files to gitlab
