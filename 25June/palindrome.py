@@ -11,10 +11,25 @@
 #     print("The string is not a palindrome\n")
 
 
-# Method2
-String = input("Enter a string\n")
-inverse_string = reversed(String)
-if list(String) == list(inverse_string):
-    print("The string is a palindrome\n")
-else:
-    print("The string is not a palindrome\n")
+# # Method2
+# String = input("Enter a string\n")
+# inverse_string = reversed(String)
+# if list(String) == list(inverse_string):
+#     print("The string is a palindrome\n")
+# else:
+#     print("The string is not a palindrome\n")
+
+
+def isPalindrome(x: int) -> bool:
+    if x < 0:
+        return False
+    elif x == 0:
+        return True  # 0 is a palindrome
+    else:
+        str_x = str(x)
+        return str_x == str_x[::-1]
+
+
+# Test cases
+print(isPalindrome(121))  # Output: True
+print(isPalindrome(300))  # Output: False

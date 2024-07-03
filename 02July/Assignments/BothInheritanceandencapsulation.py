@@ -62,7 +62,8 @@ class Appliance:  # Created class with name Appliance
 
 
 class WashingMachine(Appliance):  # Created class with name WashingMachine
-    def __init__(self, capacity, mode):
+    def __init__(self, capacity, mode, brand, power):
+        super().__init__(brand, power)
         self.__capacity = capacity
         self.__mode = mode
 

@@ -68,7 +68,8 @@ class Person:
 
 
 class Employee(Person):
-    def __init__(self, employee_id, salary):
+    def __init__(self, employee_id, salary, name, age):
+        super().__init__(name, age)
         self.__employee_id = employee_id
         self.__salary = salary
 
