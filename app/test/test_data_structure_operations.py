@@ -1,9 +1,7 @@
 import unittest
 
-//what to do to tun tests ?
 
-
-class TestDataStructureOperations(unittest.TestCase):
+class test_data_structure_operations(unittest.TestCase):
     def test_list_operations(self):
         my_list = [1, 2, 3, 4, 5]
 

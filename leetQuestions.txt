@@ -1,0 +1,268 @@
+To find the length of the longest substring without repeating characters in a given string, we can use a sliding window approach. Here’s how you can do it:
+
+1. Use two pointers (`start` and `end`) to represent the current window.
+2. Use a set to store characters in the current window.
+3. Move the `end` pointer to extend the window.
+4. If the character at `end` is not in the set, add it to the set and update the maximum length.
+5. If the character at `end` is already in the set, move the `start` pointer to the right until the character at `end` can be added to the set without duplicating.
+
+Here's a Python function implementing this approach:
+
+```python
+def length_of_longest_substring(s: str) -> int:
+    char_set = set()
+    left = 0
+    max_length = 0
+
+    for right in range(len(s)):
+        while s[right] in char_set:
+            char_set.remove(s[left])
+            left += 1
+        char_set.add(s[right])
+        max_length = max(max_length, right - left + 1)
+
+    return max_length
+```
+
+### Example
+
+For the string `"abcabcbb"`:
+- The longest substring without repeating characters is `"abc"`, which has a length of 3.
+
+For the string `"bbbbb"`:
+- The longest substring without repeating characters is `"b"`, which has a length of 1.
+
+For the string `"pwwkew"`:
+- The longest substring without repeating characters is `"wke"`, which has a length of 3. 
+
+You can test the function with these examples to verify its correctness.
+
+=====================================------------------------====================================------------------------================================================
+
+To find the longest palindromic substring in a given string, we can use a dynamic programming approach or expand around the center approach. Here, I’ll provide the expand around the center approach, which is more intuitive and simpler to implement.
+
+### Expand Around Center Approach
+
+The idea is to consider every possible center of a palindrome and expand outwards while the characters on both sides are equal. Since a palindrome can be centered at a single character or between two characters, we need to check both possibilities.
+
+Here is the implementation in Python:
+
+```python
+def longest_palindromic_substring(s: str) -> str:
+    if len(s) == 0:
+        return ""
+    
+    start = 0
+    end = 0
+
+    for i in range(len(s)):
+        len1 = expand_around_center(s, i, i)    # Odd length palindromes
+        len2 = expand_around_center(s, i, i + 1) # Even length palindromes
+        max_len = max(len1, len2)
+        
+        if max_len > end - start:
+            start = i - (max_len - 1) // 2
+            end = i + max_len // 2
+
+    return s[start:end + 1]
+
+def expand_around_center(s: str, left: int, right: int) -> int:
+    while left >= 0 and right < len(s) and s[left] == s[right]:
+        left -= 1
+        right += 1
+    return right - left - 1
+```
+
+### Explanation
+
+1. **Initialization**: We initialize `start` and `end` to keep track of the start and end indices of the longest palindrome found.
+
+2. **Center Expansion**: For each character in the string, we consider it as a center (for odd-length palindromes) and also as the center between two characters (for even-length palindromes). We expand outwards while the characters on both sides are equal.
+
+3. **Update Longest Palindrome**: If the length of the palindrome found is greater than the current longest, we update the start and end indices.
+
+4. **Result**: We return the substring between the `start` and `end` indices.
+
+### Example
+
+For the string `"babad"`:
+- The longest palindromic substrings are `"bab"` or `"aba"`.
+
+For the string `"cbbd"`:
+- The longest palindromic substring is `"bb"`.
+
+You can test the function with these examples to verify its correctness.
+
+=====================================------------------------====================================------------------------================================================
+
+"""
+
+
+Description of program :
+You are given an integer array height of length n. There are n vertical lines drawn
+such that the two endpoints of the ith line are(i, 0) and (i, height[i]).
+Find two lines that together with the x-axis form a container, such that the container contains the most water.
+Return the maximum amount of water a container can store.
+
+Input: height = [1,8,6,2,5,4,8,3,7]
+Output: 49
+Explanation: The above vertical lines are represented by array [1,8,6,2,5,4,8,3,7].
+In this case, the max area of water (blue section) the container can contain is 49.
+
+Example 2:
+Input: height = [1,1]
+Output: 1
+"""
+
+
+def max_area(height):
+    m_area = 0
+    h1 = 0
+    h2 = len(height) - 1
+    while h1 < h2:
+        area = min(height[h1], height[h2]) * (h2 - h1)
+        m_area = max(m_area, area)
+        if height[h1] < height[h2]:
+            h1 += 1
+        else:
+            h2 -= 1
+    return m_area
+
+
+
+
+
+h = [1, 8, 6, 2, 5, 4, 8, 3, 7]
+print(max_area(h))
+
+h = [1, 1]
+print(max_area(h))
+
+=====================================------------------------====================================------------------------================================================
+
+To find the longest palindromic substring in a given string, we can use a dynamic programming approach or expand around the center approach. Here, I’ll provide the expand around the center approach, which is more intuitive and simpler to implement.
+
+### Expand Around Center Approach
+
+The idea is to consider every possible center of a palindrome and expand outwards while the characters on both sides are equal. Since a palindrome can be centered at a single character or between two characters, we need to check both possibilities.
+
+Here is the implementation in Python:
+
+```python
+def longest_palindromic_substring(s: str) -> str:
+    if len(s) == 0:
+        return ""
+    
+    start = 0
+    end = 0
+
+    for i in range(len(s)):
+        len1 = expand_around_center(s, i, i)    # Odd length palindromes
+        len2 = expand_around_center(s, i, i + 1) # Even length palindromes
+        max_len = max(len1, len2)
+        
+        if max_len > end - start:
+            start = i - (max_len - 1) // 2
+            end = i + max_len // 2
+
+    return s[start:end + 1]
+
+def expand_around_center(s: str, left: int, right: int) -> int:
+    while left >= 0 and right < len(s) and s[left] == s[right]:
+        left -= 1
+        right += 1
+    return right - left - 1
+```
+
+### Explanation
+
+1. **Initialization**: We initialize `start` and `end` to keep track of the start and end indices of the longest palindrome found.
+
+2. **Center Expansion**: For each character in the string, we consider it as a center (for odd-length palindromes) and also as the center between two characters (for even-length palindromes). We expand outwards while the characters on both sides are equal.
+
+3. **Update Longest Palindrome**: If the length of the palindrome found is greater than the current longest, we update the start and end indices.
+
+4. **Result**: We return the substring between the `start` and `end` indices.
+
+### Example
+
+For the string `"babad"`:
+- The longest palindromic substrings are `"bab"` or `"aba"`.
+
+For the string `"cbbd"`:
+- The longest palindromic substring is `"bb"`.
+
+You can test the function with these examples to verify its correctness.
+=====================================------------------------====================================------------------------================================================
+3sum:
+
+nums.sort()
+    result = []
+    n = len(nums)
+
+    for i in range(n):
+        # Skip duplicate elements for the first element of the triplet
+        if i > 0 and nums[i] == nums[i - 1]:
+            continue
+        
+        # Use two-pointer technique to find the remaining two elements
+        left, right = i + 1, n - 1
+        while left < right:
+            total = nums[i] + nums[left] + nums[right]
+            if total == 0:
+                result.append([nums[i], nums[left], nums[right]])
+                
+                # Skip duplicate elements for the second and third elements of the triplet
+                while left < right and nums[left] == nums[left + 1]:
+                    left += 1
+                while left < right and nums[right] == nums[right - 1]:
+                    right -= 1
+                
+                left += 1
+                right -= 1
+            elif total < 0:
+                left += 1
+            else:
+                right -= 1
+
+    return result
+=====================================------------------------====================================------------------------================================================
+
+def letterCombinations(digits):
+    if not digits:
+        return []
+
+    # Mapping of digits to letters
+    phone_map = {
+        '2': 'abc', '3': 'def', '4': 'ghi', '5': 'jkl',
+        '6': 'mno', '7': 'pqrs', '8': 'tuv', '9': 'wxyz'
+    }
+
+    # List to store the result
+    result = []
+
+    # Helper function for backtracking
+    def backtrack(index, path):
+        # If the path length is equal to the digits length, we have a complete combination
+        if len(path) == len(digits):
+            result.append("".join(path))
+            return
+        
+        # Get the letters that the current digit maps to, and loop through them
+        possible_letters = phone_map[digits[index]]
+        for letter in possible_letters:
+            # Add the letter to the current path and move to the next digit
+            path.append(letter)
+            backtrack(index + 1, path)
+            # Backtrack by removing the letter
+            path.pop()
+
+    # Start the backtracking with the first digit
+    backtrack(0, [])
+    return result
+
+# Example usage
+print(letterCombinations("23"))  # Output: ['ad', 'ae', 'af', 'bd', 'be', 'bf', 'cd', 'ce', 'cf']
+
+=====================================------------------------====================================------------------------================================================
+
